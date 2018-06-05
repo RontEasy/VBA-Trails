@@ -1,0 +1,58 @@
+Public Class Form1
+    Private Sub Button1_click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        ' Häufig Öffnen
+
+        If ComboBox1.SelectedItem = "" Then
+            MsgBox("Nichts ausgewählt!")
+        End If
+
+        If ComboBox1.SelectedItem = "1" Then
+            System.Diagnostics.Process.Start("C:\1.docx")
+        End If
+
+        If ComboBox1.SelectedItem = "2" Then
+            System.Diagnostics.Process.Start("C:\2.docx")
+        End If
+        
+        If ComboBox1.SelectedItem = "3" Then
+            System.Diagnostics.Process.Start("C:\3.xls")
+        End If
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        ' Häufig Drücken
+
+        If ComboBox1.SelectedItem = "" Then
+            MsgBox("Nichts ausgewählt!")
+        End If
+
+        If ComboBox1.SelectedItem = "1" Then
+            Dim externeanwendung As New System.Diagnostics.Process()
+            externeanwendung.StartInfo.FileName = "C:\1.docx"
+            externeanwendung.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            externeanwendung.StartInfo.Verb = "print"
+            externeanwendung.Start()
+        End If
+
+        If ComboBox1.SelectedItem = "2" Then
+            Dim externeanwendung As New System.Diagnostics.Process()
+            externeanwendung.StartInfo.FileName = "C:\2.docx"
+            externeanwendung.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            externeanwendung.StartInfo.Verb = "print"
+            externeanwendung.Start()
+        End If
+
+        If ComboBox1.SelectedItem = "3" Then
+            Dim externeanwendung As New System.Diagnostics.Process()
+            externeanwendung.StartInfo.FileName = "C:\3.xls"
+            externeanwendung.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            externeanwendung.StartInfo.Verb = "print"
+            externeanwendung.Start()
+        End If
+       
+     End Sub
+     
+  End Class
